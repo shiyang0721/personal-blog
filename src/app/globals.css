@@ -90,6 +90,9 @@ body {
   border-collapse: collapse;
   margin: 1.5rem 0;
   font-size: 0.95em;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .prose table th,
@@ -97,6 +100,7 @@ body {
   border: 1px solid #e2e8f0;
   padding: 0.75rem 1rem;
   text-align: left;
+  white-space: nowrap;
 }
 
 .prose table th {
@@ -111,4 +115,49 @@ body {
 
 .prose table tr:hover {
   background-color: #f1f5f9;
+}
+
+/* 手机阅读优化 */
+@media (max-width: 640px) {
+  .prose {
+    font-size: 1rem !important;
+    line-height: 1.8 !important;
+  }
+  
+  .prose p {
+    margin-top: 1.25em !important;
+    margin-bottom: 1.25em !important;
+  }
+  
+  .prose h2 {
+    margin-top: 2em !important;
+    font-size: 1.4em !important;
+  }
+  
+  .prose h3 {
+    margin-top: 1.5em !important;
+    font-size: 1.2em !important;
+  }
+  
+  .prose img {
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    margin: 1.5em auto !important;
+  }
+  
+  .prose blockquote {
+    margin: 1.5em 0 !important;
+    padding: 1em 1.25em !important;
+    font-size: 0.95em !important;
+  }
+  
+  .prose ul, .prose ol {
+    padding-left: 1.5em !important;
+    margin: 1em 0 !important;
+  }
+  
+  .prose li {
+    margin: 0.5em 0 !important;
+  }
 }
