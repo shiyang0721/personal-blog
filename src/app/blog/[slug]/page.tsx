@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getPostBySlug, getPostList } from '@/lib/posts'
+import { getPostBySlug, markdownToHtml } from '@/lib/posts'
 
 interface Props {
   params: { slug: string }
@@ -12,7 +12,10 @@ export function generateStaticParams() {
   }))
 }
 
-export default function PostPage({ params }: Props) {
+// 引入 getPostList 用于 generateStaticParams
+import { getPostList } from '@/lib/posts'
+
+export default async function PostPage({ params }: Props) {
   const post = getPostBySlug(params.slug)
 
   if (!post) {
@@ -25,6 +28,9 @@ export default function PostPage({ params }: Props) {
       </div>
     )
   }
+
+  // 将 Markdown 转换为 HTML
+  const contentHtml = await markdownToHtml(post.content)
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
@@ -46,7 +52,7 @@ export default function PostPage({ params }: Props) {
         </header>
         <div
           className="prose prose-lg max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </article>
     </div>
