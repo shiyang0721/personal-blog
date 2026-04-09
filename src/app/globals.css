@@ -83,3 +83,32 @@ body {
     #f0f7ff 100%
   );
 }
+
+/* 表格样式 - 带边框 */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95em;
+}
+
+.prose table th,
+.prose table td {
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.prose table th {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: #1e3a5f;
+}
+
+.prose table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.prose table tr:hover {
+  background-color: #f1f5f9;
+}
