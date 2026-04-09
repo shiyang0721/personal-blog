@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
+import remarkGfm from 'remark-gfm'
 import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'src/content/posts')
@@ -67,6 +68,9 @@ export function getPostBySlug(slug: string): PostMeta | null {
 }
 
 export async function markdownToHtml(markdown: string): Promise<string> {
-  const result = await remark().use(html).process(markdown)
+  const result = await remark()
+    .use(remarkGfm)  // 支持表格、删除线等 GFM 语法
+    .use(html)
+    .process(markdown)
   return result.toString()
 }
