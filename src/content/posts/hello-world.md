@@ -30,4 +30,24 @@ coverImage: "/images/hello-world.jpg"
 
 ---
 
+## 漫画：45°生存指南
+
+![牛小马：45°职场生存指南](/images/comic-45-degrees/1.jpg)
+
+![牛小马：地铁上的挣扎](/images/comic-45-degrees/2.jpg)
+
+![牛小马：卷不起来](/images/comic-45-degrees/3.jpg)
+
+![牛小马：躺不下去](/images/comic-45-degrees/4.jpg)
+
+![牛小马：45°斜躺](/images/comic-45-degrees/5.jpg)
+
+![牛小马：下班后的选择](/images/comic-45-degrees/6.jpg)
+
+![牛小马：晚间充电](/images/comic-45-degrees/7.jpg)
+
+![牛小马：信条](/images/comic-45-degrees/8.jpg)
+
+---
+
 *Keep learning, keep growing.*
